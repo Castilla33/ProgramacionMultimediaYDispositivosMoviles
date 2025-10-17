@@ -20,6 +20,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/Rojo"
         android:text="@string/Cancelar"
         tools:layout_editor_absoluteX="74dp"
         tools:layout_editor_absoluteY="602dp" />
@@ -28,6 +29,7 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/Verde"
         android:text="@string/Continuar"
         tools:layout_editor_absoluteX="247dp"
         tools:layout_editor_absoluteY="603dp" />
