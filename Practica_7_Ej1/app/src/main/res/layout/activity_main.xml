@@ -12,11 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="134dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="134dp"
-        android:text="El timbre"
+        android:text="Moon Doesn't Mind"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -41,6 +41,8 @@
         android:layout_marginStart="160dp"
         android:layout_marginTop="12dp"
         android:text="MusiK"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#A98282"
         android:textSize="80px"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
@@ -51,7 +53,7 @@
         android:layout_width="207dp"
         android:layout_height="28dp"
         android:layout_marginStart="7dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="4dp"
         android:max="10"
         android:progress="3"
@@ -65,18 +67,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="74dp"
         android:layout_marginEnd="72dp"
-        android:layout_marginBottom="293dp"
+        android:layout_marginBottom="292dp"
         android:text="Play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnPausa"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnPausa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="89dp"
-        android:layout_marginBottom="293dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="292dp"
         android:text="Pausa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -85,8 +88,8 @@
         android:id="@+id/tvTiempo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="206dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="204dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -100,4 +103,44 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/seekBar"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <Button
+        android:id="@+id/btnMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="74dp"
+        android:layout_marginBottom="14dp"
+        android:text="Mensaje"
+        app:layout_constraintBottom_toTopOf="@+id/btnPuerta"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnMoneda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="14dp"
+        android:text="Moneda"
+        app:layout_constraintBottom_toTopOf="@+id/btnComer"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnPuerta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="74dp"
+        android:layout_marginBottom="100dp"
+        android:text="Puerta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnComer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="100dp"
+        android:text="Comer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

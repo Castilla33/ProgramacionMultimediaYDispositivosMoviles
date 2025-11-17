@@ -1,6 +1,7 @@
 package com.example.practica_7_ej1;
 
 import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
     private Handler handler;
     private Runnable actualizar;
+    private SoundPool soundPool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,18 +35,21 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.reehee);
+        mediaPlayer = MediaPlayer.create(this, R.raw.moondoesntmind);
 
         SeekBar seekBar = findViewById(R.id.seekBar);
         TextView tvTiempo = findViewById(R.id.tvTiempo);
         TextView tvMax = findViewById(R.id.tvMax);
 
-        tvMax.setText(mediaPlayer.getDuration());
-
-
         mediaPlayer.setOnPreparedListener(mp -> {
             seekBar.setMax(mediaPlayer.getDuration());
             tvTiempo.setText("00:00");
+
+            int duracion = mediaPlayer.getDuration();
+            int min = duracion / 1000 / 60;
+            int seg = duracion / 1000 % 60;
+            String max = String.format("%02d:%02d", min, seg);
+            tvMax.setText(max);
         });
 
         Button btnPlay = findViewById(R.id.btnPlay);
@@ -65,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         handler.post(actualizar);
-
 
         btnPlay.setOnClickListener(v -> {
             if (!mediaPlayer.isPlaying()) {
@@ -92,6 +96,34 @@ public class MainActivity extends AppCompatActivity {
             public void onStartTrackingTouch(SeekBar seekBar) {}
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {}
+        });
+
+        Button btnMsg = findViewById(R.id.btnMsg);
+        Button btnMoneda = findViewById(R.id.btnMoneda);
+        Button btnPuerta = findViewById(R.id.btnPuerta);
+        Button btnComer = findViewById(R.id.btnComer);
+
+        soundPool = new SoundPool.Builder().setMaxStreams(4).build();
+
+        int sonido1 = soundPool.load(this, R.raw.msg, 1);
+        int sonido2 = soundPool.load(this, R.raw.moneda, 1);
+        int sonido3 = soundPool.load(this, R.raw.puerta, 1);
+        int sonido4 = soundPool.load(this, R.raw.comer, 1);
+
+        btnMsg.setOnClickListener(v -> {
+            soundPool.play(sonido1, 1, 1, 1, 0, 1);
+        });
+
+        btnMoneda.setOnClickListener(v -> {
+            soundPool.play(sonido2, 1, 1, 1, 0, 1);
+        });
+
+        btnPuerta.setOnClickListener(v -> {
+            soundPool.play(sonido3, 1, 1, 1, 0, 1);
+        });
+
+        btnComer.setOnClickListener(v -> {
+            soundPool.play(sonido4, 1, 1, 1, 0, 1);
         });
     }
 
